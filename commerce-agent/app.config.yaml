@@ -1,0 +1,45 @@
+application:
+  actions: actions
+  web: web-src
+  
+  runtimeManifest:
+    packages:
+      commerce-agent:
+        license: Apache-2.0
+        actions:
+          chat:
+            function: actions/chat/index.js
+            web: 'yes'
+            runtime: 'nodejs:22'
+            inputs:
+              # Tool Configuration
+              TOOL_MODE: $TOOL_MODE
+              
+              # Magento Configuration
+              MAGENTO_GRAPHQL_URL: $MAGENTO_GRAPHQL_URL
+              MAGENTO_API_TOKEN: $MAGENTO_API_TOKEN
+              
+              # LLM Provider
+              LLM_PROVIDER: $LLM_PROVIDER
+              
+              # Ollama
+              OLLAMA_BASE_URL: $OLLAMA_BASE_URL
+              OLLAMA_MODEL: $OLLAMA_MODEL
+              
+              # OpenAI
+              OPENAI_API_KEY: $OPENAI_API_KEY
+              OPENAI_MODEL: $OPENAI_MODEL
+              
+              # Claude
+              CLAUDE_API_KEY: $CLAUDE_API_KEY
+              CLAUDE_MODEL: $CLAUDE_MODEL
+              
+              # Google Gemini
+              GOOGLE_API_KEY: $GOOGLE_API_KEY
+              GEMINI_MODEL: $GEMINI_MODEL
+              
+              LOG_LEVEL: debug
+            
+            annotations:
+              require-adobe-auth: false
+              final: true

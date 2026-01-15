@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Widget Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .info {
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .info code {
+      background: #e0e0e0;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 AI Chat Widget Test Page</h1>
+    
+    <div class="info">
+      <p><strong>Status:</strong> Widget should appear in the bottom-right corner</p>
+      <p><strong>Action URL:</strong> <code id="action-url">Loading...</code></p>
+    </div>
+
+    <h2>Test Instructions</h2>
+    <ol>
+      <li>Look for the chat button (💬) in the bottom-right corner</li>
+      <li>Click it to open the chat window</li>
+      <li>Try sending a message like "Show me shirts"</li>
+      <li>The AI should respond with product information</li>
+    </ol>
+
+    <h2>Sample Test Messages</h2>
+    <ul>
+      <li>"Hello" - Should greet you</li>
+      <li>"Show me red shirts" - Should search products</li>
+      <li>"Add to cart" - Should attempt to add items</li>
+      <li>"Show my cart" - Should display cart contents</li>
+    </ul>
+  </div>
+
+  <!-- Chat Widget Container -->
+  <div id="ai-chat-widget-root"></div>
+
+  <!-- React and ReactDOM from CDN -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Widget Configuration -->
+  <script>
+    // Detect if running locally or in production
+    const isLocal = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1';
+    
+    const actionUrl = isLocal 
+      ? 'http://localhost:9080/api/v1/web/guest/commerce-agent/chat'
+      : 'https://your-namespace.adobeioruntime.net/api/v1/web/commerce-agent/chat';
+
+    document.getElementById('action-url').textContent = actionUrl;
+
+    window.chatWidgetConfig = {
+      actionUrl: actionUrl,
+      magentoConfig: {
+        baseUrl: isLocal ? 'https://magento.local' : 'https://your-store.com'
+      }
+    };
+  </script>
+
+  <!-- Chat Widget Bundle (will be created after build) -->
+  <!--<script src="./dist/chat-widget.umd.js"></script>-->
+</body>
+</html>
