@@ -306,11 +306,9 @@ function createLLMProvider(params = {}) {
     claudeModel: params.CLAUDE_MODEL || process.env.CLAUDE_MODEL || 'claude-sonnet-4-20250514',
     
     // Gemini config
-    //geminiApiKey: params.GOOGLE_API_KEY || process.env.GOOGLE_API_KEY,
-    //geminiModel: params.GEMINI_MODEL || process.env.GEMINI_MODEL || 'gemini-2.5-flash-lite',
+    geminiApiKey: params.GOOGLE_API_KEY || process.env.GOOGLE_API_KEY,
+    geminiModel: params.GEMINI_MODEL || process.env.GEMINI_MODEL || 'gemini-2.5-flash-lite',
 
-    geminiApiKey:'AIzaSyDfxEuz6YypcEulOHxeVtr1yNVtSXbcgEA',
-    geminiModel:'gemini-2.5-flash-lite',
   };
 
   return new LLMProvider(config);
