@@ -1,0 +1,36 @@
+{
+  "project": {
+    "id": "4566206088345557217",
+    "name": "477ChocolateHeron",
+    "title": "App Builder Project 753",
+    "org": {
+      "id": "18501",
+      "name": "Accenture PLC Partner",
+      "ims_org_id": "0CEB60F754C7E06B0A4C98A2@AdobeOrg"
+    },
+    "workspace": {
+      "id": "4566206088345594392",
+      "name": "Dev",
+      "title": "Dev",
+      "description": "Developement workspace",
+      "action_url": "https://18501-477chocolateheron-dev.adobeioruntime.net",
+      "app_url": "https://18501-477chocolateheron-dev.adobeio-static.net",
+      "details": {
+        "credentials": [],
+        "services": [],
+        "runtime": {
+          "namespaces": [
+            {
+              "name": "18501-477chocolateheron-dev",
+              "auth": "bf5a423a-091f-45e5-a650-bff9921b4095:5hA8Ae35As4kkoUFPD25817Ep02cDhF5pRq17nfwoEV1SEHVN3007h1PuI65dp8b"
+            }
+          ]
+        },
+        "events": {
+          "registrations": []
+        },
+        "mesh": {}
+      }
+    }
+  }
+}

@@ -309,7 +309,7 @@ function createLLMProvider(params = {}) {
     //geminiApiKey: params.GOOGLE_API_KEY || process.env.GOOGLE_API_KEY,
     //geminiModel: params.GEMINI_MODEL || process.env.GEMINI_MODEL || 'gemini-2.5-flash-lite',
 
-    geminiApiKey:'AIzaSyDGsXsICJRcZ0YwE2QUxazofQq4XgeLp9Q',
+    geminiApiKey:'AIzaSyDfxEuz6YypcEulOHxeVtr1yNVtSXbcgEA',
     geminiModel:'gemini-2.5-flash-lite',
   };
 
